@@ -61,18 +61,19 @@ public class LinkedList {
 
 	public void insertCallForSortedLinkedList(int data) {
 		Node newNode = new Node(data);
-		Node currentNode = null;
+		Node currentNode = this.head;
 		Node nextNode = null;
-		if (this.head == null) {
+		if (currentNode == null) {
 			insertAtHead(data);
+		} else if (currentNode.getData() > newNode.getData()) {
+			newNode.setNextNode(currentNode);
+			this.head = newNode;
 		} else {
-			currentNode = this.head;
 			nextNode = currentNode.getNextNode();
 
 			while (nextNode != null) {
 				if (nextNode.getData() > data) {
 					newNode.setNextNode(nextNode);
-					currentNode.setNextNode(newNode);
 					break;
 				}
 				currentNode = nextNode;

@@ -6,24 +6,23 @@ public class LinkedListDemo {
 
 		LinkedList linkedList = new LinkedList();
 		
-//		linkedList.insertAtHead(8);
-//		linkedList.insertAtHead(7);
-//		linkedList.insertAtHead(5);
-//		linkedList.insertAtHead(3);
-//		linkedList.insertAtHead(2);
+		linkedList.insertAtHead(7);
+		linkedList.insertAtHead(5);
+		linkedList.insertAtHead(3);
+		linkedList.insertAtHead(2);
 		System.out.println(linkedList);
 		System.out.println("Length: " + linkedList.length());
-//		linkedList.deleteAtHead();
+		linkedList.deleteAtHead();
 		System.out.println(linkedList);
 		System.out.println("Length: " + linkedList.length());
 		Node node1 = linkedList.find(3);
 		System.out.println("Found: " +node1);
 		
-		linkedList.insertCallForSortedLinkedList(6);
+		linkedList.insertCallForSortedLinkedList(1);
 		System.out.println(linkedList);
 		System.out.println("Length: " + linkedList.length());
 		
-		linkedList.insertCallForSortedLinkedList(7);
+		linkedList.insertCallForSortedLinkedList(8);
 		System.out.println(linkedList);
 		System.out.println("Length: " + linkedList.length());
 	}
