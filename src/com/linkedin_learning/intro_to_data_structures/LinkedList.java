@@ -28,10 +28,12 @@ public class LinkedList {
 		Node currentNode = this.head;
 		while (currentNode != null) {
 			if (currentNode.getData() == data) {
+				System.out.println("Data found");
 				return currentNode;
 			}
 			currentNode = currentNode.getNextNode();
 		}
+		System.out.println("Data not found");
 		return null;
 	}
 
@@ -49,22 +51,29 @@ public class LinkedList {
 
 	}
 
-	public void insert(int data) {
+	public void insertLikeNormal(int data) {
+
 		Node newNode = new Node(data);
 		Node currentNode = this.head;
-		Node nextNode = currentNode.getNextNode();
-		while (nextNode != null) {
-
+		Node nextNode = null;
+		if ( currentNode == null) {
+			this.head = newNode;
+		} else {
+			nextNode = currentNode.getNextNode();
+			while (nextNode != null) {
+				currentNode = nextNode;
+				nextNode = nextNode.getNextNode();
+			}
+			currentNode.setNextNode(newNode);
 		}
-		currentNode.setNextNode(newNode);
 	}
 
-	public void insertCallForSortedLinkedList(int data) {
+	public void insertForSortedList(int data) {
 		Node newNode = new Node(data);
 		Node currentNode = this.head;
 		Node nextNode = null;
 		if (currentNode == null) {
-			insertAtHead(data);
+			this.head = newNode;
 		} else if (currentNode.getData() > newNode.getData()) {
 			newNode.setNextNode(currentNode);
 			this.head = newNode;
@@ -77,7 +86,7 @@ public class LinkedList {
 					break;
 				}
 				currentNode = nextNode;
-				nextNode = currentNode.getNextNode();
+				nextNode = nextNode.getNextNode();
 			}
 			currentNode.setNextNode(newNode);
 		}
