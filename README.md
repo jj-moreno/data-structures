@@ -1,0 +1,2 @@
+# data-structures
+This project demos a few data structure classes of list type. These data structures are modeled by lessons from LinkedIn Learning's intro to data structures. I programmed improvements to the data structure classes after modeling from the lessons and further lengthened the demos a.k.a console programs to demo all the functionality added and improved by me.
